@@ -1,2 +1,3 @@
 1. Pastikan settingan connectionStrings pada appsetting.development.json backend sudah sesuai dengan kondisi laptop/komputer user
 2. Pastikan settingan MCFApi pada appsettinga.development.json frontend sudah sesuai dengan kondisi laptop/komputer user
+3. Generate Script.sql sudah terdapat script insert dummy user dan dummy storage location
