@@ -1,0 +1,113 @@
+﻿@model IEnumerable<TrBpkbDto>
+
+<div class="card shadow border-0 mt-4">
+	<div class="card-header bg-secondary bg-gradient ml-0 py-3">
+		<div class="row">
+			<div class="col-12 text-center">
+				<h1 class="text-white">Transaksi BPKB</h1>
+			</div>
+		</div>
+	</div>
+	<div class="card-body p-4">
+		<div class="row pb-3">
+			<div class="col-6">
+			</div>
+			<div class="col-6 text-end">
+				<a asp-action="TrBpkbCreate" class="btn btn-outline-primary"><i class="bi bi-plus-square"></i>Tambah Transaksi</a>
+
+			</div>
+		</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>
+						Agreement Number
+					</th>
+					<th>
+						Branch Id
+					</th>
+					<th>
+						No. BPKB
+					</th>
+					<th>
+						Tanggal BPKB in
+					</th>
+					<th>
+						Tanggal BPKB
+					</th>
+					<th>
+						No. Faktur
+					</th>
+					<th>
+						Tanggal Faktur
+					</th>
+					<th>
+						No. Polisi
+					</th>
+					<th>
+						Created By
+					</th>
+					<th>
+						Created On
+					</th>
+					<th>
+						Last Updated By
+					</th>
+					<th>
+						Last Updated On
+					</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model)
+				{
+					<tr>
+						<td>
+							@item.AgreementNumber
+						</td>
+						<td>
+							@item.BranchId
+						</td>
+						<td>
+							@item.BpkbNo
+						</td>
+						<td>
+							@item.BpkbDateIn
+						</td>
+						<td>
+							@item.BpkbDate
+						</td>
+						<td>
+							@item.FakturNo
+						</td>
+						<td>
+							@item.FakturDate
+						</td>
+						<td>
+							@item.PoliceNo
+						</td>
+						<td>
+							@item.CreatedBy
+						</td>
+						<td>
+							@item.CreatedOn
+						</td>
+						<td>
+							@item.LastUpdatedBy
+						</td>
+						<td>
+							@item.LastUpdatedOn
+						</td>
+						<td>
+							<a class="btn btn-success" asp-action="TrBpkbEdit" asp-route-agreementNumber="@item.AgreementNumber">
+								Edit
+							</a>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+
+	</div>
+</div>

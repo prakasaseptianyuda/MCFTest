@@ -1,0 +1,98 @@
+﻿@model TrBpkbDto
+
+<form asp-action="TrBpkbCreate">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-center">Tambah Transaksi</h1>
+
+        <hr />
+        <div class="row">
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Aggrement Number</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="AgreementNumber" class="form-control" />
+                <span asp-validation-for="AgreementNumber" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Branch ID</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="BranchId" class="form-control" />
+                <span asp-validation-for="BranchId" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">No. BPKB</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="BpkbNo" class="form-control" />
+                <span asp-validation-for="BpkbNo" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Tanggal BPKB In</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="BpkbDateIn" class="form-control" type="date"/>
+                <span asp-validation-for="BpkbDateIn" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Tanggal BPKB</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="BpkbDate" class="form-control" type="date" />
+                <span asp-validation-for="BpkbDate" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">No. Faktur</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="FakturNo" class="form-control" />
+                <span asp-validation-for="FakturNo" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Tanggal Faktur</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="FakturDate" class="form-control" type="date"/>
+                <span asp-validation-for="FakturDate" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Nomor Polisi</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="PoliceNo" class="form-control" />
+                <span asp-validation-for="PoliceNo" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Lokasi Penyimpanan</label>
+            </div>
+            <div class="col-10 pb-3">
+                <select asp-for="LocationId" class="form-select" asp-items="@ViewBag.StorageLocations">
+                    <option value="" selected>Select Lokasi Peyimpanan</option>
+                </select>
+                <span asp-validation-for="LocationId" class="text-danger"></span>
+            </div>
+
+            <div class="col-5 offset-2">
+                <a asp-action="Index" class="btn-primary btn form-control ">Cancel</a>
+            </div>
+            <div class="col-5">
+                <input type="submit" value="Save" class="btn btn-success form-control" />
+            </div>
+
+        </div>
+
+        <div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"></partial>
+}
