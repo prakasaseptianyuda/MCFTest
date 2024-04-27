@@ -1,5 +1,9 @@
 Create Database MCFDB;
 
+go
+
+use MCFDB;
+
 Create Table ms_user (
   user_id BIGINT IDENTITY(1,1) PRIMARY KEY,
   user_name VARCHAR(20) NOT NULL,
